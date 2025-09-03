@@ -6,6 +6,11 @@ on:
   pull_request:
     branches: [ development ]
 
+env:
+  # Default environment variables (override with GitHub Secrets)
+  SECRET_KEY: ${{ secrets.SECRET_KEY }}
+  DEBUG: ${{ secrets.DEBUG }}
+
 jobs:
   test-and-build:
     runs-on: ubuntu-latest
@@ -29,12 +34,6 @@ jobs:
           source .venv/bin/activate
           pip install --upgrade pip
           pip install -r backend/requirements.txt
-
-      - name: Set environment variables
-        run: |
-          echo "SECRET_KEY=django-insecure-_eor+4j%icob+7fg*vkfbu)rpw7_7ew+k=&j_kqkoxc-(q@w)q" >> $GITHUB_ENV
-          echo "DEBUG=1" >> $GITHUB_ENV
-
       - name: Run Django migrations
         run: |
           source .venv/bin/activate
