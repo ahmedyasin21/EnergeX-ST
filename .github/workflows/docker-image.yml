@@ -48,7 +48,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build --build-arg SECRET_KEY=$SECRET_KEY --build-arg DEBUG=$DEBUG -t ahmedyasin1947/backend_web:latest ./backend
+          docker build -t ahmedyasin1947/backend_web:latest ./backend
 
       # Optional: push to DockerHub
       - name: Push Docker image
