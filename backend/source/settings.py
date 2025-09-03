@@ -117,8 +117,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-
 # Cors Headers Settings
 CORS_ORIGIN_ALLOW_ALL = True
 CORS_ALLOW_HEADERS = [
