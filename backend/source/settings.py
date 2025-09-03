@@ -22,7 +22,7 @@ TEMPLATE_DIR = BASE_DIR / 'templates'
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config("SECRET_KEY",default="django-insecure-!$#&amp;v1n@8zq3u0k5z2e^u)l9m3h@)o8g7+&amp;!xjv1f4v3y5zq")
+SECRET_KEY = config("SECRET_KEY", default="django-insecure-!$#&amp;v1n@8zq3u0k5z2e^u)l9m3h@)o8g7+&amp;!xjv1f4v3y5zq")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
@@ -116,8 +116,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
-
 
 # Cors Headers Settings
 CORS_ORIGIN_ALLOW_ALL = True
