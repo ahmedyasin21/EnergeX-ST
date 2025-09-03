@@ -2,13 +2,15 @@ name: Django CI
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ development ]
+    branches:
+      - main
 
-variables:
-  SECRET_KEY: $SECRET_KEY
-  DEBUG: $DEBUG
+env:
+  SECRET_KEY: ${{ secrets.SECRET_KEY }}
+  DEBUG: ${{ secrets.DEBUG }}
 
 jobs:
   test:
