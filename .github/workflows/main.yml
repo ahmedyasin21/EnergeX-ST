@@ -14,6 +14,7 @@ jobs:
         image: redis:7
         ports:
           - 6379:6379
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -23,7 +24,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -39,8 +39,9 @@ jobs:
 
       - name: Run Django migrations and tests
         run: |
-          ./backend/.venv/bin/python backend/manage.py migrate
-          ./backend/.venv/bin/python backend/manage.py test
+          . .venv/bin/activate
+          python backend/manage.py migrate
+          python backend/manage.py test
 
       - name: Build and push Docker image
         run: |
