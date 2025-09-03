@@ -45,6 +45,7 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
+
       - name: Build Docker image
         run: |
           docker build --build-arg SECRET_KEY=$SECRET_KEY --build-arg DEBUG=$DEBUG -t ahmedyasin1947/backend_web:latest ./backend
