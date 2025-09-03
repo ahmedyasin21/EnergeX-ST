@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verification OTP Code</title>
+  <style>
+    /* CSS styles for your email template */
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #00aa00;
+      text-align: center;
+    }
+
+    p {
+      color: #333333;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .otp-code {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 40px;
+      font-size: 30px;
+      font-weight: bold;
+      color: #00aa00;
+      border: 2px solid #00aa00;
+      border-radius: 5px;
+      padding: 10px;
+    }
+
+    .company-name {
+      color: #333333;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .user-greeting {
+      color: #333333;
+      text-align: center;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    .avatar {
+      display: table-cell;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      vertical-align: middle;
+      border-radius: 50%;
+      background-color: #00aa00;
+      color: #ffffff;
+      font-weight: bold;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Change Email Verification OTP Code</h1>
+    <p class="user-greeting">
+      <span class="avatar">{{ user_name|first|upper }}</span>
+      Hello, {{ user_name }}!
+    </p>
+    <p>Please use the following OTP code to change the email:</p>
+    <div class="otp-code">{{ otp }}</div>
+    <p class="company-name">Skillo AI</p>
+  </div>
+</body>
+
+</html>
