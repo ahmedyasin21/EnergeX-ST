@@ -6,11 +6,6 @@ on:
   pull_request:
     branches: [ development ]
 
-env:
-  # Default environment variables (override with GitHub Secrets)
-  SECRET_KEY: ${{ secrets.SECRET_KEY }}
-  DEBUG: ${{ secrets.DEBUG }}
-
 jobs:
   test-and-build:
     runs-on: ubuntu-latest
